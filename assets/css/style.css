@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* Basic CSS Reset */
 * {
@@ -15,7 +16,6 @@ body {
 }
 
 body {
-  font-family: Arial, sans-serif;
   line-height: 1.5;
 }
 
@@ -128,7 +128,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Montserrat";
+  font-family: "Poppins";
   background: var(--color-surface);
   color: var(--color-9);
 }
@@ -196,7 +196,6 @@ header .menu {
 header nav {
   display: flex;
   height: 100%;
-  /* width: 50%; */
   align-items: center;
   justify-content: center;
 }
@@ -276,7 +275,7 @@ header nav a:hover {
 
   header nav.hscroll {
     background: var(--color-primary);
-    border-radius: 10px;
+    border-radius: 0 0 12px 12px;
   }
   header nav.hscroll ~ #overlay {
     inset: 8dvh 0 0 0;
@@ -327,12 +326,12 @@ section#hero {
 .banner-wrapper::after {
   content: "";
   position: absolute;
-  z-index: 2;
+  z-index: -1;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  background: #2125298f;
+  background: #212529aa;
 }
 
 .banner-wrapper .container {
@@ -759,7 +758,7 @@ section#about .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto auto;
-  grid-template-areas: 
+  grid-template-areas:
     "head head"
     "text form"
     "text form";
@@ -825,7 +824,7 @@ section#closing .contact {
   section#closing .container {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
-    grid-template-areas: 
+    grid-template-areas:
       "head"
       "text"
       "form";
@@ -861,7 +860,8 @@ footer .container {
   gap: 1rem;
 }
 
-.footer-link p, .footer-nav p {
+.footer-link p,
+.footer-nav p {
   font-weight: 600;
 }
 
