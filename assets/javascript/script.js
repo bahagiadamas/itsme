@@ -53,21 +53,27 @@ document.addEventListener("DOMContentLoaded", () => {
 // TYPPEWRITTER EFFECT
 const texts = ["Tech-Savvy", "Green-Minded", "Impact-Driven"];
 let speed = 100;
-const textElements = document.querySelector(".typewriter-text");
+const textElement = document.querySelector(".typewriter-text");
 let textIndex = 0;
 let charcterIndex = 0;
+
 function typeWriter() {
   if (charcterIndex < texts[textIndex].length) {
-    textElements.innerHTML += texts[textIndex].charAt(charcterIndex);
+    const currentText = texts[textIndex].substring(0, charcterIndex + 1);
+    textElement.innerHTML = currentText;
+    textElement.setAttribute("data-text", currentText);
     charcterIndex++;
     setTimeout(typeWriter, speed);
   } else {
     setTimeout(eraseText, 1200);
   }
 }
+
 function eraseText() {
-  if (textElements.innerHTML.length > 0) {
-    textElements.innerHTML = textElements.innerHTML.slice(0, -1);
+  if (textElement.innerHTML.length > 0) {
+    const currentText = textElement.innerHTML.slice(0, -1);
+    textElement.innerHTML = currentText;
+    textElement.setAttribute("data-text", currentText); // Update outline text
     setTimeout(eraseText, 50);
   } else {
     textIndex = (textIndex + 1) % texts.length;
@@ -75,6 +81,7 @@ function eraseText() {
     setTimeout(typeWriter, 500);
   }
 }
+
 window.onload = typeWriter;
 
 // NAV A ACTIVE
