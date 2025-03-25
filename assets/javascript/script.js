@@ -73,7 +73,7 @@ function eraseText() {
   if (textElement.innerHTML.length > 0) {
     const currentText = textElement.innerHTML.slice(0, -1);
     textElement.innerHTML = currentText;
-    textElement.setAttribute("data-text", currentText); // Update outline text
+    textElement.setAttribute("data-text", currentText);
     setTimeout(eraseText, 50);
   } else {
     textIndex = (textIndex + 1) % texts.length;
@@ -115,10 +115,11 @@ document.addEventListener("DOMContentLoaded", () => {
 // SCROLL REVEAL
 document.addEventListener("DOMContentLoaded", function () {
   ScrollReveal().reveal(".popup", {
-    scale: 0.8,
+    scale: 0.85,
     opacity: 0,
-    duration: 800,
-    delay: 150,
+    duration: 500,
+    delay: 300,
+    easing: "ease-in",
     reset: true,
   });
 });
@@ -145,3 +146,16 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
       console.error("Error!", error.message);
     });
 });
+
+// DARK MODE
+document
+  .getElementById("darkModeToggle")
+  .addEventListener("change", function () {
+    document.body.classList.toggle("dark-mode");
+
+    const icon = this.nextElementSibling.querySelector("ion-icon");
+    icon.setAttribute(
+      "name",
+      document.body.classList.contains("dark-mode") ? "moon" : "sunny"
+    );
+  });
