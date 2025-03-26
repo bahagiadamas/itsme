@@ -86,8 +86,8 @@ window.onload = typeWriter;
 
 // NAV A ACTIVE
 document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll("header nav a");
+  const sections = document.querySelectorAll("main > section[id]");
+  const navLinks = document.querySelectorAll("#navbar a");
 
   function setActiveLink() {
     let currentSection = "";
@@ -96,20 +96,21 @@ document.addEventListener("DOMContentLoaded", () => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
 
-      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+      if (window.scrollY >= sectionTop - sectionHeight / 3) {
         currentSection = section.getAttribute("id");
       }
     });
 
     navLinks.forEach((link) => {
       link.classList.remove("active");
-      if (link.getAttribute("href") === `#${currentSection}`) {
+      if (link.getAttribute("href").includes(`#${currentSection}`)) {
         link.classList.add("active");
       }
     });
   }
-
+  
   window.addEventListener("scroll", setActiveLink);
+  setActiveLink();
 });
 
 // SCROLL REVEAL

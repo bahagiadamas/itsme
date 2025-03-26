@@ -23,8 +23,9 @@ header .container {
   align-items: center;
 }
 
-header .logo {
+header .container .logo h3 {
   cursor: default;
+  pointer-events: none;
   color: #f1faee;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
@@ -184,7 +185,7 @@ section#hero {
 }
 .banner-text h1 span {
   position: relative;
-  color: var(--color-primary-dark);
+  color: var(--color-primary);
   letter-spacing: 2px;
   text-shadow: 0 0 5px var(--color-shadow);
 }
@@ -194,12 +195,12 @@ section#hero {
   left: 0;
   z-index: -1;
   color: transparent;
-  -webkit-text-stroke: 3px var(--color-secondary-light);
+  -webkit-text-stroke: 3px #f1faee;
 }
 
 .banner-text h3 span {
   position: relative;
-  color: var(--color-primary-dark);
+  color: var(--color-primary);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -211,7 +212,7 @@ section#hero {
   left: 0;
   z-index: -1;
   color: transparent;
-  -webkit-text-stroke: 3px var(--color-secondary-light);
+  -webkit-text-stroke: 3px #f1faee;
 }
 
 .banner-text h3 span::after {
@@ -491,6 +492,7 @@ section#about .container {
 
 .timeline-text p.tagline {
   font-style: italic;
+  font-weight: 500;
 }
 
 .timeline-center {
@@ -773,6 +775,8 @@ footer .container {
 
 /* TOGGLE SWITCH DARK MODE */
 .toggle-switch {
+  position: absolute;
+  right: -5%;
   width: 50px;
   height: 25px;
   position: relative;
@@ -807,6 +811,12 @@ footer .container {
 
 .toggle-switch input:checked + .slider .toggle-icon {
   left: 30px;
+}
+
+@media (max-width: 1024px) {
+  .toggle-switch {
+    right: 0;
+  }
 }
 
 /* THANKS PAGE */
