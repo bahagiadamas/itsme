@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  max-width: var(--screen-width);
+  margin: 0 auto;
+}
+
+.button {
+  display: block;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: var(--color-text);
+  color: var(--color-text-inverse);
+  box-shadow: 0 0 5px var(--color-shadow);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 500ms linear;
+  &:hover {
+    background: var(--color-text-inverse);
+    color: var(--color-text);
+  }
+}
+
+.card {
+  background: transparent;
+  padding: min(1rem, 8%);
+  border-radius: 10px;
+  box-shadow: 0 0 5px var(--color-shadow);
+  transition: all 500ms ease-in-out;
+  &:hover {
+    box-shadow: 0 0 15px var(--color-shadow);
+  }
+}

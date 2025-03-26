@@ -1,0 +1,40 @@
+/* GLOBAL ROOT */
+:root {
+  /* FONT SIZE */
+  --font-size-base: 16px;
+  --font-size-h1: clamp(2.5rem, 2rem + 1.67vw, 4rem);
+  --font-size-h2: clamp(2rem, 1.5rem + 1.67vw, 3.5rem);
+  --font-size-h3: clamp(1.5rem, 1rem + 1.67vw, 3rem);
+  --font-size-h4: clamp(1.25rem, 1rem + 1.67vw, 2rem);
+  --font-size-p: clamp(1rem, 0.917rem + 0.28vw, 1.25rem);
+
+  /* EXTRAS */
+  --padding-1: min(1rem, 8%);
+  --screen-width: min(1360px, 90%);
+
+  /* COLOR THEME */
+  --color-primary: #264653;
+  --color-primary-light: #2a5567;
+  --color-primary-dark: #1b313a;
+
+  --color-secondary: #2a9d8f;
+  --color-secondary-light: #3fbcaa;
+  --color-secondary-dark: #207066;
+
+  --color-background: #f1faee;
+  --color-surface: #e0e5e3;
+
+  --color-text: #264653;
+  --color-text-light: #3fbcaa;
+  --color-text-inverse: #f1faee;
+
+  --color-border: #a8c0bf;
+  --color-divider: #b0d0ce;
+
+  --color-success: #2a9d8f;
+  --color-warning: #e9c46a;
+  --color-error: #e76f51;
+  --color-info: #457b9d;
+
+  --color-shadow: rgba(0, 0, 0, 0.3);
+}
