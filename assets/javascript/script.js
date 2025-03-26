@@ -171,3 +171,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// DYNAMIC TITLE
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("main > section");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionTitle = entry.target.getAttribute("data-title");
+          document.title = `D B I CIPTA | ${sectionTitle}`;
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+});

@@ -194,7 +194,7 @@ section#hero {
   left: 0;
   z-index: -1;
   color: transparent;
-  -webkit-text-stroke: 5px var(--color-secondary-light);
+  -webkit-text-stroke: 3px var(--color-secondary-light);
 }
 
 .banner-text h3 span {
@@ -211,13 +211,13 @@ section#hero {
   left: 0;
   z-index: -1;
   color: transparent;
-  -webkit-text-stroke: 5px var(--color-secondary-light);
+  -webkit-text-stroke: 3px var(--color-secondary-light);
 }
 
 .banner-text h3 span::after {
   content: "";
   position: absolute;
-  background: var(--color-text-inverse);
+  background: #f1faee;
   width: 4px;
   height: 100%;
   right: calc(0 + 3rem);
@@ -630,28 +630,58 @@ section#closing .contact {
 .contact form {
   display: grid;
   grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
 }
 
-.contact form input,
-.contact form textarea {
-  padding: 8px;
-  border-radius: 10px;
-  border: none;
-  box-shadow: none;
-  transition: all 500ms linear;
-  background: whitesmoke;
+.input-group label {
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  font-size: var(--font-size-p);
+  pointer-events: none;
+  transition: all 500ms;
 }
 
-.contact form input:focus,
-.contact form textarea:focus {
-  outline: none;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+.input-group input,
+.input-group textarea {
+  background: transparent;
+  border-bottom: 1.5px solid var(--color-text);
+  color: var(--color-text);
+  transition: all 500ms;
+  font-size: var(--font-size-p);
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  color: var(--color-text);
+  font-size: var(--font-size-p);
+}
+
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:not(:placeholder-shown) ~ label {
+  top: -2rem;
+  font-size: calc(var(--font-size-p) * 0.9);
+}
+
+.input-group label::after,
+.input-group textarea::after {
+  content: " *";
+  font-weight: 600;
 }
 
 @media (max-width: 1024px) {
   section#closing .container {
     grid-template-columns: 1fr;
+    gap: 3rem;
     grid-template-rows: auto auto auto;
     grid-template-areas:
       "head"
@@ -741,7 +771,7 @@ footer .container {
   }
 }
 
-/* FLOATING BUTTON */
+/* TOGGLE SWITCH DARK MODE */
 .toggle-switch {
   width: 50px;
   height: 25px;
@@ -792,5 +822,5 @@ section#thanks {
   color: var(--color-text);
 }
 section#thanks .container {
-  max-width: min(60%, 85%);
+  max-width: min(60%, 90%);
 }

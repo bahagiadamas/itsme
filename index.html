@@ -19,11 +19,11 @@
           <ion-icon name="menu" onclick="openMenubar()"></ion-icon>
         </div>
         <nav id="navbar">
-          <a href="#hero" class="active">Home</a>
-          <a href="#about">About</a>
-          <a href="#education">Education</a>
-          <a href="#experiences">Experiences</a>
-          <a href="#closing">Contact</a>
+          <a href="index.html#hero" class="active">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#education">Education</a>
+          <a href="index.html#experiences">Experiences</a>
+          <a href="index.html#closing">Contact</a>
           <label class="toggle-switch">
             <input type="checkbox" id="darkModeToggle" />
             <span class="slider">
@@ -36,7 +36,7 @@
     </header>
 
     <main>
-      <section id="hero">
+      <section data-title="HOME" id="hero">
         <div class="banner-wrapper">
           <div class="container">
             <div class="banner-text">
@@ -52,7 +52,7 @@
         </div>
       </section>
 
-      <section id="about">
+      <section data-title="ABOUT" id="about">
         <div class="container">
           <div class="about-text">
             <h2 class="popup">About Me</h2>
@@ -93,7 +93,7 @@
         </div>
       </section>
 
-      <section id="skill">
+      <section data-title="ABOUT" id="skill">
         <div class="container">
           <h2 class="popup">Competences</h2>
           <div class="skill-container">
@@ -226,7 +226,7 @@
         </div>
       </section>
 
-      <section id="education">
+      <section data-title="EDUCATION" id="education">
         <div class="container">
           <div class="container">
             <h2 class="popup">Education</h2>
@@ -298,7 +298,7 @@
         </div>
       </section>
 
-      <section id="experiences">
+      <section data-title="EXPERIENCES" id="experiences">
         <div class="container">
           <div class="container">
             <h2 class="popup">Experiences</h2>
@@ -437,7 +437,7 @@
         </div>
       </section>
 
-      <section id="closing">
+      <section data-title="CONTACT" id="closing">
         <div class="container">
           <h2 class="popup">Contact</h2>
           <div class="closing-text popup">
@@ -455,33 +455,42 @@
           </div>
           <div class="contact">
             <form id="myForm">
-              <input
-                id="name"
-                class="popup"
-                type="text"
-                name="entry.1835579550"
-                autocomplete="off"
-                required
-                placeholder="Name"
-              />
-              <input
+              <div class="input-group">
+                <input
+                  id="name"
+                  class="popup"
+                  type="text"
+                  name="entry.1835579550"
+                  autocomplete="off"
+                  placeholder=""
+                  required
+                />
+                <label class="popup" for="name">Name</label>
+              </div>
+              <div class="input-group">
+                <input
                 id="email"
                 class="popup"
                 type="email"
                 name="entry.605824708"
                 autocomplete="off"
+                placeholder=""
                 required
-                placeholder="Email"
-              />
-              <textarea
+                />
+                <label class="popup" for="email">Email</label>
+              </div>
+              <div class="input-group">
+                <textarea
                 class="popup"
                 name="entry.412088699"
                 id="message"
                 autocomplete="off"
+                placeholder=""
                 required
-                placeholder="Message"
                 style="resize: none"
-              ></textarea>
+                ></textarea>
+                <label class="popup" for="message">Message</label>
+              </div>
               <button type="submit" class="button popup">Submit</button>
             </form>
           </div>
