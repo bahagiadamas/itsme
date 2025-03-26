@@ -1006,6 +1006,7 @@ section#thanks {
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: var(--color-text);
 }
 section#thanks .container {
   max-width: min(60%, 85%);

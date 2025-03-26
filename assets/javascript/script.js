@@ -148,14 +148,26 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 });
 
 // DARK MODE
-document
-  .getElementById("darkModeToggle")
-  .addEventListener("change", function () {
-    document.body.classList.toggle("dark-mode");
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleSwitch = document.getElementById("darkModeToggle");
+  const body = document.body;
+  const icon = document.querySelector(".slider ion-icon");
 
-    const icon = this.nextElementSibling.querySelector("ion-icon");
-    icon.setAttribute(
-      "name",
-      document.body.classList.contains("dark-mode") ? "moon" : "sunny"
-    );
+  if (localStorage.getItem("dark-mode") === "enabled") {
+    body.classList.add("dark-mode");
+    toggleSwitch.checked = true;
+    icon.setAttribute("name", "moon");
+  }
+
+  toggleSwitch.addEventListener("change", function () {
+    if (toggleSwitch.checked) {
+      body.classList.add("dark-mode");
+      localStorage.setItem("dark-mode", "enabled");
+      icon.setAttribute("name", "moon");
+    } else {
+      body.classList.remove("dark-mode");
+      localStorage.setItem("dark-mode", "disabled");
+      icon.setAttribute("name", "sunny");
+    }
   });
+});

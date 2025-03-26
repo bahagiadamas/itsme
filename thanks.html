@@ -14,41 +14,65 @@
     <title>Thank you!</title>
   </head>
   <body id="thanks-page">
-    <header>
-      <div class="container">
-        <div class="logo">
-          <h3>D B I CIPTA</h3>
-        </div>
-        <div class="menu" id="menubar">
-          <ion-icon name="menu" onclick="openMenubar()"></ion-icon>
-        </div>
-        <nav id="navbar">
-          <a href="index.html#hero" class="active">Home</a>
-          <a href="index.html#about">About</a>
-          <a href="index.html#education">Education</a>
-          <a href="index.html#experiences">Experiences</a>
-          <a href="index.html#closing">Contact</a>
-        </nav>
-        <div id="overlay" onclick="closeMenubar()"></div>
-      </div>
-    </header>
+    <header id="header"></header>
 
     <section id="thanks">
-        <div class="container">
-            <h2 class="popup">Thank You!</h2>
-            <p class="popup">Thank you for sending me a message. We appreciate your effort and will respond to you as soon as possible! Your message has been received by me. Please check your email (including the spam folder) for further updates.</p>
-            <a href="index.html#home" class="popup button">Back to Home</a>
-        </div>
+      <div class="container">
+        <h2 class="popup">Thank You!</h2>
+        <p class="popup">
+          Thank you for sending me a message. We appreciate your effort and will
+          respond to you as soon as possible! Your message has been received by
+          me. Please check your email (including the spam folder) for further
+          updates.
+        </p>
+        <a href="index.html#home" class="popup button">Back to Home</a>
+      </div>
     </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("index.html")
+          .then((response) => response.text())
+          .then((data) => {
+            let tempDiv = document.createElement("div");
+            tempDiv.innerHTML = data;
 
-    <!-- IONICON -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
+            let header = tempDiv.querySelector("header");
+            if (header) {
+              document.getElementById("header").innerHTML =
+                header.outerHTML;
+            }
+
+            
+            setupDarkMode();
+          })
+          .catch((error) => console.error("Gagal mengambil header:", error));
+      });
+
+      function setupDarkMode() {
+        const toggleSwitch = document.getElementById("darkModeToggle");
+        if (!toggleSwitch) return;
+
+        const body = document.body;
+        const icon = document.querySelector(".slider ion-icon");
+
+        if (localStorage.getItem("dark-mode") === "enabled") {
+          body.classList.add("dark-mode");
+          toggleSwitch.checked = true;
+          icon.setAttribute("name", "moon");
+        }
+
+        toggleSwitch.addEventListener("change", function () {
+          if (toggleSwitch.checked) {
+            body.classList.add("dark-mode");
+            localStorage.setItem("dark-mode", "enabled");
+            icon.setAttribute("name", "moon");
+          } else {
+            body.classList.remove("dark-mode");
+            localStorage.setItem("dark-mode", "disabled");
+            icon.setAttribute("name", "sunny");
+          }
+        });
+      }
+    </script>
   </body>
 </html>
