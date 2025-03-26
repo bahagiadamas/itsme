@@ -124,8 +124,8 @@ legend {
 
 .dark-mode {
   --color-background: #121c1a;
-  --color-surface: #264653;
-  --color-primary: #1b313a;
+  --color-surface: #292d3e;
+  --color-primary: #31364a;
   --color-text: #e0e5e3;
   --color-text-inverse: #264653;
 }
