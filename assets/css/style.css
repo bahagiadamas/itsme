@@ -118,8 +118,7 @@ legend {
   --color-error: #e76f51;
   --color-info: #457b9d;
 
-  --color-shadow-black: rgba(0, 0, 0, 0.5);
-  --color-shadow-white: rgba(255, 255, 255, 0.5);
+  --color-shadow: rgba(0, 0, 0, 0.3);
 }
 
 .dark-mode {
@@ -128,6 +127,7 @@ legend {
   --color-primary: #31364a;
   --color-text: #e0e5e3;
   --color-text-inverse: #264653;
+  --color-shadow: rgba(255, 255, 255, 0.3);
 }
 
 ::selection {
@@ -189,14 +189,14 @@ p {
   cursor: pointer;
   background: var(--color-text);
   color: var(--color-text-inverse);
-  box-shadow: 0 0 5px var(--color-shadow-black);
+  box-shadow: 0 0 5px var(--color-shadow);
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
   transition: all 500ms linear;
   &:hover {
-    background: var(--color-secondary);
-    color: var(--color-text-inverse);
+    background: var(--color-text-inverse);
+    color: var(--color-text);
   }
 }
 
@@ -206,10 +206,10 @@ p {
   z-index: 1;
   padding: min(1rem, 8%);
   border-radius: 10px;
-  box-shadow: 0 0 5px var(--color-shadow-black);
+  box-shadow: 0 0 5px var(--color-shadow);
   transition: all 500ms ease-in-out;
   &:hover {
-    box-shadow: 0 0 20px var(--color-shadow-black);
+    box-shadow: 0 0 20px var(--color-shadow);
   }
 }
 
@@ -231,7 +231,7 @@ header {
 }
 header.hscroll {
   background: var(--color-primary);
-  box-shadow: 0 5px 10px var(--color-shadow-black);
+  box-shadow: 0 5px 10px var(--color-shadow);
 }
 
 header .container {
@@ -403,7 +403,7 @@ section#hero {
   position: relative;
   color: var(--color-primary-dark);
   letter-spacing: 2px;
-  text-shadow: 0 0 5px var(--color-shadow-white);
+  text-shadow: 0 0 5px var(--color-shadow);
 }
 .banner-text h1 span::after {
   content: attr(data-text);
@@ -420,7 +420,7 @@ section#hero {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-shadow: 0 0 5px var(--color-shadow-white);
+  text-shadow: 0 0 5px var(--color-shadow);
 }
 .banner-text h3 span::before {
   content: attr(data-text);
@@ -511,7 +511,7 @@ section#about .container {
   box-shadow: none;
   transition: all 500ms linear;
   &:hover {
-    box-shadow: 2px 2px 7px var(--color-shadow-black);
+    box-shadow: 2px 2px 7px var(--color-shadow);
   }
 }
 

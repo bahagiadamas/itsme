@@ -118,8 +118,8 @@ document.addEventListener("DOMContentLoaded", function () {
     scale: 0.85,
     opacity: 0,
     duration: 500,
-    delay: 300,
-    easing: "ease-in",
+    delay: 250,
+    easing: "ease-in-out",
     reset: true,
   });
 });
