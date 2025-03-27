@@ -1,4 +1,3 @@
-/* Box sizing rules */
 *,
 *::before,
 *::after {
@@ -7,19 +6,16 @@
   padding: 0;
 }
 
-/* Remove default list styles */
 ul,
 ol {
   list-style: none;
 }
 
-/* Reset default link styles */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Reset heading and paragraph margins */
 h1,
 h2,
 h3,
@@ -31,13 +27,11 @@ p {
   font-weight: inherit;
 }
 
-/* Remove default button styles */
 button {
   all: unset;
   cursor: pointer;
 }
 
-/* Remove outline on focus (optional, but add better focus styles for accessibility) */
 button,
 input,
 textarea,
@@ -47,25 +41,21 @@ select {
   font: inherit;
 }
 
-/* Remove default table spacing */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* Make images responsive by default */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Ensure better scrolling behavior */
 html {
   scroll-behavior: smooth;
 }
 
-/* Prevent text selection for certain elements (optional) */
 button,
 a {
   user-select: none;
