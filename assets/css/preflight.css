@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+body {
+  font-family: "Montserrat";
+  background: var(--color-bg);
+}
+
+h1 {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-xl);
+  letter-spacing: clamp(0.5px, 0.2vw, 2px);
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-sm);
+  line-height: var(--line-lg);
+  letter-spacing: clamp(0.4px, 0.15vw, 1.5px);
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-sm);
+  line-height: var(--line-lg);
+  letter-spacing: clamp(0.3px, 0.1vw, 1px);
+}
+
+h4 {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-sm);
+  line-height: var(--line-lg);
+  letter-spacing: clamp(0.2px, 0.05vw, 0.8px);
+}
+
+p,
+a {
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.5;
+  letter-spacing: clamp(0.1px, 0.02vw, 0.5px);
+}
+
+/* DARK MODE */
+.dark-mode {
+  --color-bg: #2B4560;
+  --color-text-inverse: #2B4560;
+  --color-text: #E1E7E0;
+  --color-primary: #15273A;
+  --color-accent: #D4F1F4;
+  --color-shadow: rgba(255, 255, 255, 0.5);
+}
+
+/* HEADER */
+header {
+  padding: 0 5dvw;
+}
+@media (min-width: 1600px) {
+  header {
+    padding-left: calc((100% - 1440px) / 2);
+    padding-right: calc((100% - 1440px) / 2);
+  }
+}
