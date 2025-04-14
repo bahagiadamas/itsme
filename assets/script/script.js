@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
         scale: 0.9,
         opacity: 0,
         duration: 1200,
-        delay: 200 + index * 200,
+        delay: 100 + index * 50,
         reset: true,
       });
     });
