@@ -22,7 +22,8 @@ header.scroll {
 }
 
 header .logo {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
+  letter-spacing: 2px;
   font-weight: var(--font-weight-bold);
   padding: var(--spacing-sm);
 }
@@ -89,7 +90,7 @@ header nav a.current::after {
   right: 0;
   bottom: 0;
   background: #e1e7e0;
-  transition: 0.4s;
+  transition: 0.5s;
   border-radius: 100px;
 }
 
@@ -221,12 +222,22 @@ header nav a.current::after {
   text-align: center;
 }
 
+.banner-text h1 span {
+  color: var(--color-primary);
+  text-shadow: 0 0 10px var(--color-shadow);
+}
+
 .banner-text a {
   display: inline-block;
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
   margin: var(--spacing-md) 0;
+  transition: all 500ms ease-in-out;
   animation: bounce 1500ms ease-in-out infinite;
+
+  &:hover {
+    animation: beat 1500ms ease-in-out infinite;
+  }
 }
 
 .banner-text h2 span {
@@ -236,7 +247,7 @@ header nav a.current::after {
 .banner-text h2 span::after {
   content: "";
   position: absolute;
-  background: inherit;
+  background: #e1e7e0;
   width: 1%;
   height: 100%;
   top: 50%;
@@ -519,6 +530,11 @@ header nav a.current::after {
   top: 50%;
   transform: translateY(-50%);
   border-radius: 50%;
+}
+
+.timeline-circle.edu.ut {
+  background: var(--color-bg);
+
 }
 
 .timeline-circle img {
