@@ -1,51 +1,50 @@
 :root {
-    /* COLOR */
-    --color-bg: #D4F1F4;
-    --color-text-inverse: #E1E7E0;
-    --color-text: #2B4560;
-    --color-primary: #09A9C8;
-    --color-accent: #05445E;
-    --color-shadow: rgba(0, 0, 0, 0.5);
+  /* COLOR */
+  --color-bg: #d4f1f4;
+  --color-text-inverse: #e1e7e0;
+  --color-text: #2b4560;
+  --color-primary: #09a9c8;
+  --color-accent: #05445e;
+  --color-shadow: rgba(0, 0, 0, 0.5);
 
-    /* TYPOGRAPHY */
-    --font-size-xxl: clamp(2rem, 2rem + 1.67vw, 4rem);
-    --font-size-xl: clamp(1.75rem, 1.75rem + 1.46vw, 3.5rem);
-    --font-size-lg: clamp(1.5rem, 1.5rem + 1.25vw, 3rem);
-    --font-size-md: clamp(1.25rem, 1.25rem + 1.04vw, 2.5rem);
-    --font-size-normal: clamp(1rem, 1rem + 0.21vw, 1.25rem);
-    --font-weight-bold: 700;
-    --font-weight-md: 600;
-    --font-weigght-sm: 500;
-    --font-weight-normal: 400;
-    --line-xl: 2;
-    --line-lg: 1.5;
-    --line-md: 1.25;
-    --line-normal: 1;
+  /* TYPOGRAPHY */
+  --font-size-xxl: clamp(2rem, 2rem + 1.67vw, 4rem);
+  --font-size-xl: clamp(1.75rem, 1.75rem + 1.46vw, 3.5rem);
+  --font-size-lg: clamp(1.5rem, 1.5rem + 1.25vw, 3rem);
+  --font-size-md: clamp(1.25rem, 1.25rem + 1.04vw, 2.5rem);
+  --font-size-normal: clamp(1rem, 1rem + 0.21vw, 1.25rem);
+  --font-weight-bold: 700;
+  --font-weight-md: 600;
+  --font-weigght-sm: 500;
+  --font-weight-normal: 400;
+  --line-xl: 2;
+  --line-lg: 1.5;
+  --line-md: 1.25;
+  --line-normal: 1;
 
+  /* SPACING */
+  --spacing-xxl: 3rem;
+  --spacing-xl: 2.5rem;
+  --spacing-lg: 2rem;
+  --spacing-md: 1.5rem;
+  --spacing-normal: 1rem;
+  --spacing-sm: 0.5rem;
 
-    /* SPACING */
-    --spacing-xxl: 3rem;
-    --spacing-xl: 2.5rem;
-    --spacing-lg: 2rem;
-    --spacing-md: 1.5rem;
-    --spacing-normal: 1rem;
-    --spacing-sm: 0.5rem;
+  /* BORDER */
+  --border-rounded: 50%;
+  --border-radius-lg: 100px;
+  --border-radius-md: 20px;
+  --border-radius-sm: 10px;
 
-    /* BORDER */
-    --border-rounded: 50%;
-    --border-radius-lg: 100px;
-    --border-radius-md: 20px;
-    --border-radius-sm: 10px;
+  /* BREAKPOINT */
+  --screen-mobile: 768px;
+  --screen-tablet: 1024px;
+  --screen-desktop: 1440px;
+  --screen-fullhd: 1920px;
+  --screen-4k: 2560px;
 
-    /* BREAKPOINT */
-    --screen-mobile: 768px;
-    --screen-tablet: 1024px;
-    --screen-desktop: 1440px;
-    --screen-fullhd: 1920px;
-    --screen-4k: 2560px;
-
-    /* TRANSITION */
-    --transition-long: 0.5s;
-    --transition-normal: 0.3s;
-    --transition-short: 0.2s;
+  /* TRANSITION */
+  --transition-long: 0.5s;
+  --transition-normal: 0.3s;
+  --transition-short: 0.2s;
 }

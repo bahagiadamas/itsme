@@ -41,16 +41,6 @@ a {
   letter-spacing: clamp(0.1px, 0.02vw, 0.5px);
 }
 
-/* DARK MODE */
-.dark-mode {
-  --color-bg: #2B4560;
-  --color-text-inverse: #2B4560;
-  --color-text: #E1E7E0;
-  --color-primary: #15273A;
-  --color-accent: #D4F1F4;
-  --color-shadow: rgba(255, 255, 255, 0.5);
-}
-
 /* HEADER */
 header {
   padding: 0 5dvw;

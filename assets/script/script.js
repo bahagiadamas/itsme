@@ -189,30 +189,41 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// DARK MODE
-document.addEventListener("DOMContentLoaded", function () {
-  const toggleSwitch = document.getElementById("darkModeToggle");
-  const body = document.body;
-  const icon = document.querySelector(".slider ion-icon");
 
-  if (localStorage.getItem("dark-mode") === "enabled") {
-    body.classList.add("dark-mode");
-    toggleSwitch.checked = true;
-    icon.setAttribute("name", "moon");
+// DROPDOWN FOR DARK MODE
+function toggleDropdown() {
+  const dropdown = document.getElementById("themeDropdown");
+  dropdown.classList.toggle("show");
+}
+document.addEventListener("click", function (e) {
+  const dropdown = document.getElementById("themeDropdown");
+  const trigger = document.querySelector(".logo");
+
+  if (!trigger.contains(e.target)) {
+    dropdown.classList.remove("show");
   }
-
-  toggleSwitch.addEventListener("change", function () {
-    if (toggleSwitch.checked) {
-      body.classList.add("dark-mode");
-      localStorage.setItem("dark-mode", "enabled");
-      icon.setAttribute("name", "moon");
-    } else {
-      body.classList.remove("dark-mode");
-      localStorage.setItem("dark-mode", "disabled");
-      icon.setAttribute("name", "sunny");
-    }
-  });
 });
+
+// DARK MODE SELECTION
+function setTheme(theme) {
+  localStorage.setItem("theme", theme);
+  applyTheme();
+}
+
+function applyTheme() {
+  const theme = localStorage.getItem("theme");
+
+  if (theme === "dark") {
+    document.body.classList.add("dark-mode");
+    document.body.classList.remove("light-mode");
+  } else if (theme === "light") {
+    document.body.classList.add("light-mode");
+    document.body.classList.remove("dark-mode");
+  } else {
+    document.body.classList.remove("light-mode", "dark-mode");
+  }
+}
+document.addEventListener("DOMContentLoaded", applyTheme);
 
 // DYNAMIC TITLE
 document.addEventListener("DOMContentLoaded", function () {
