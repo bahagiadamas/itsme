@@ -105,8 +105,8 @@ header .menu-bar {
   height: 4px;
   border-radius: 50px;
   background: #e1e7e0;
-  transition: all 0.3s ease;
   transform-origin: center;
+  transition: all 0.5s ease;
 }
 
 .hamburger.active .line {
@@ -114,14 +114,14 @@ header .menu-bar {
 }
 
 .hamburger.active .line:nth-child(1) {
-  rotate: 45deg;
+  rotate: -45deg;
 }
 
 .hamburger.active .line:nth-child(2) {
-  rotate: -45deg;
+  rotate: 45deg;
 }
 .hamburger.active .line:nth-child(3) {
-  rotate: 45deg;
+  rotate: -45deg;
 }
 
 header nav {
@@ -237,7 +237,7 @@ header nav a.current::after {
   }
 
   header.scroll nav a::after {
-    background: var(--color-accent);
+    background: var(--color-accent1);
   }
 
   header nav a.current::after {
@@ -794,6 +794,7 @@ form button.btn {
 #footer {
   color: #e1e7e0;
   background: var(--color-primary);
+  position: relative;
 }
 
 footer .container {

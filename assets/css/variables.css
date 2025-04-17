@@ -4,6 +4,7 @@
   --color-text-inverse: #e1e7e0;
   --color-text: #2b4560;
   --color-primary: #09a9c8;
+  --color-primary-dark: #0b7489;
   --color-accent: #05445e;
   --color-shadow: rgba(0, 0, 0, 0.5);
 
@@ -44,7 +45,7 @@
   --screen-4k: 2560px;
 
   /* TRANSITION */
-  --transition-long: 0.5s;
-  --transition-normal: 0.3s;
-  --transition-short: 0.2s;
+  --transition-long: all 0.5s ease;
+  --transition-normal: all 0.3s ease;
+  --transition-short: all 0.2s ease;
 }

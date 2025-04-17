@@ -10,7 +10,7 @@
   initial-value: 0deg;
 }
 
-/* DARK MODE */
+/* THEME */
 body.light-mode {
   --color-bg: #d4f1f4;
   --color-text-inverse: #e1e7e0;
@@ -35,7 +35,9 @@ body.dark-mode {
     --color-text-inverse: #e1e7e0;
     --color-text: #2b4560;
     --color-primary: #09a9c8;
+    --color-primary-dark: #0b7489;
     --color-accent: #05445e;
+    --color-accent1: #05445e;
     --color-shadow: rgba(0, 0, 0, 0.5);
   }
 }
@@ -46,7 +48,9 @@ body.dark-mode {
     --color-text-inverse: #2b4560;
     --color-text: #e1e7e0;
     --color-primary: #15273a;
+    --color-primary-dark: #0d1823;
     --color-accent: #d4f1f4;
+    --color-accent1: #05445e;
     --color-shadow: rgba(255, 255, 255, 0.5);
   }
 }
