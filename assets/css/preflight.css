@@ -51,3 +51,7 @@ header {
     padding-right: calc((100% - 1440px) / 2);
   }
 }
+
+main > section:not(:first-child) {
+  padding: 8dvh 0;
+}

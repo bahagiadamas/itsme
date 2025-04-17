@@ -1,145 +1,36 @@
-function updatePadding() {
-  const header = document.querySelector("header");
-  const sections = document.querySelectorAll("section:not(#hero)");
-
-  if (header && sections.length > 0) {
-    const headerHeight = header.offsetHeight;
-
-    sections.forEach((section) => {
-      section.style.paddingTop = `${headerHeight}px`;
-    });
-  }
-}
-
-window.addEventListener("load", updatePadding);
-window.addEventListener("resize", updatePadding);
-
 // OPEN AND CLOSE MENU
 function openMenu() {
   const navbar = document.getElementById("navbar");
-  const menuIcon = document.querySelector(".menu-bar ion-icon");
-  const overlay = document.getElementById("overlay");
-  const navLinks = document.querySelectorAll("header nav a");
+  const hamburger = document.querySelector(".hamburger");
 
   navbar.classList.toggle("active");
-
-  if (navbar.classList.contains("active")) {
-    menuIcon.setAttribute("name", "close-outline");
-    updateMenuPosition(); // Atur posisi navbar & overlay
-    overlay.style.visibility = "visible";
-    overlay.style.opacity = "1";
-  } else {
-    closeMenu();
-  }
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
+  hamburger.classList.toggle("active");
 }
 
 function closeMenu() {
-  const navbar = document.getElementById("navbar");
-  const menuIcon = document.querySelector(".menu-bar ion-icon");
-  const overlay = document.getElementById("overlay");
-
-  navbar.classList.remove("active");
-  menuIcon.setAttribute("name", "menu-outline");
-
-  overlay.style.visibility = "hidden";
-  overlay.style.opacity = "0";
-
-  navbar.style.removeProperty("top"); // Reset navbar ke CSS default
-  overlay.style.removeProperty("top"); // Reset overlay ke CSS default
+  document.getElementById("navbar").classList.remove("active");
+  document.querySelector(".hamburger").classList.remove("active");
 }
 
-function updateMenuPosition() {
-  const header = document.getElementById("header");
-  const navbar = document.getElementById("navbar");
-  const overlay = document.getElementById("overlay");
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll("#navbar a");
 
-  const headerHeight = header.offsetHeight;
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMenu();
+    });
+  });
+});
 
-  // Atur posisi navbar di bawah header
-  navbar.style.top = `${headerHeight}px`;
+// SCROLL CLASS FOR HEADER
+document.addEventListener("scroll", function () {
+  const header = document.querySelector("header");
 
-  // Cek apakah header memiliki class "scroll"
-  if (header.classList.contains("scroll")) {
-    overlay.style.top = `${headerHeight}px`; // Di bawah header
-  } else {
-    overlay.style.top = "0"; // Menutupi header
-  }
-}
-
-// 🔹 Fungsi untuk menambahkan kelas "scroll" pada header
-function checkScroll() {
-  const header = document.getElementById("header");
-  const heroSection = document.getElementById("hero");
-
-  const triggerPoint = heroSection.offsetTop + heroSection.offsetHeight * 0.5;
-
-  if (window.scrollY >= triggerPoint) {
+  if (window.scrollY > 0) {
     header.classList.add("scroll");
   } else {
     header.classList.remove("scroll");
   }
-
-  // Perbarui posisi overlay ketika scroll berubah
-  if (document.getElementById("navbar").classList.contains("active")) {
-    updateMenuPosition();
-  }
-}
-
-// 🔹 Fungsi untuk mengecek ukuran layar saat diresize
-function checkResize() {
-  checkScroll(); // Pastikan kelas "scroll" tetap ada saat resize
-}
-
-// 🔹 Event Listener
-window.addEventListener("resize", checkResize);
-window.addEventListener("scroll", checkScroll);
-
-// SCREEN ADJUSTMENT FOR OVERLAY
-function checkScreenSize() {
-  const overlay = document.getElementById("overlay");
-  const navbar = document.getElementById("navbar");
-
-  if (window.matchMedia("(min-width: 1025px)").matches) {
-    overlay.style.visibility = "hidden";
-    overlay.style.opacity = "0";
-  } else {
-    if (!navbar.classList.contains("active")) {
-      overlay.style.visibility = "hidden";
-      overlay.style.opacity = "0";
-    } else {
-      overlay.style.visibility = "visible";
-      overlay.style.opacity = "1";
-    }
-  }
-}
-window.addEventListener("resize", checkScreenSize);
-document.addEventListener("DOMContentLoaded", checkScreenSize);
-
-// SCROLL CLASS FOR HEADER
-document.addEventListener("DOMContentLoaded", function () {
-  const header = document.querySelector("header");
-  const sections = document.querySelectorAll(
-    "section#about, section ~ section"
-  );
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          header.classList.add("scroll");
-        } else {
-          header.classList.remove("scroll");
-        }
-      });
-    },
-    { rootMargin: "-50% 0px -50% 0px", threshold: 0 }
-  );
-
-  sections.forEach((section) => observer.observe(section));
 });
 
 // CURRENT NAVIGATION ITEM
@@ -189,18 +80,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 // DROPDOWN FOR DARK MODE
 function toggleDropdown() {
   const dropdown = document.getElementById("themeDropdown");
+  const icon = document.getElementById("dropdownIcon");
+
   dropdown.classList.toggle("show");
+  icon.classList.toggle("show");
 }
+
 document.addEventListener("click", function (e) {
   const dropdown = document.getElementById("themeDropdown");
   const trigger = document.querySelector(".logo");
+  const icon = document.getElementById("dropdownIcon");
 
   if (!trigger.contains(e.target)) {
     dropdown.classList.remove("show");
+    icon.classList.remove("show");
   }
 });
 

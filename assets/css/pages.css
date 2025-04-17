@@ -30,8 +30,18 @@ header .logo {
   user-select: none;
 }
 
-header .logo:nth-child(1), header .logo:nth-child(2) {
- cursor: pointer;
+header .logo:nth-child(1),
+header .logo:nth-child(2) {
+  cursor: pointer;
+}
+
+#dropdownIcon {
+  rotate: 0;
+  transition: 500ms;
+}
+
+#dropdownIcon.show {
+  rotate: 180deg;
 }
 
 .dropdown {
@@ -39,19 +49,21 @@ header .logo:nth-child(1), header .logo:nth-child(2) {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  top: -500%;
+  top: -200px;
   left: 0;
   background: transparent;
   width: 150%;
   padding: 1rem;
   border-radius: 0 0 10px 10px;
   visibility: hidden;
+  opacity: 0;
   transition: all 500ms linear;
 }
 
 .dropdown.show {
-  visibility: visible;
   top: 100%;
+  visibility: visible;
+  opacity: 1;
 }
 .dropdown button {
   display: flex;
@@ -67,14 +79,49 @@ header .logo:nth-child(1), header .logo:nth-child(2) {
 
 header.scroll .dropdown {
   background: var(--color-primary);
-} 
-
-
+}
 
 header .menu-bar {
   display: none;
-  font-size: var(--font-size-xl);
   cursor: pointer;
+  aspect-ratio: 1/1;
+  width: auto;
+  height: 6dvh;
+}
+
+.hamburger {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex-direction: column;
+}
+
+.hamburger .line {
+  width: 100%;
+  height: 4px;
+  border-radius: 50px;
+  background: #e1e7e0;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger.active .line {
+  position: absolute;
+}
+
+.hamburger.active .line:nth-child(1) {
+  rotate: 45deg;
+}
+
+.hamburger.active .line:nth-child(2) {
+  rotate: -45deg;
+}
+.hamburger.active .line:nth-child(3) {
+  rotate: 45deg;
 }
 
 header nav {
@@ -127,20 +174,35 @@ header nav a.current::after {
 
 @media (max-width: 1024px) {
   header .menu-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
   }
 
   header nav {
     position: absolute;
     left: 0;
-    top: -500px;
+    top: 100%;
     padding: var(--spacing-md);
     display: inline-block;
     background: transparent;
     width: 100%;
     transition: inherit;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  header nav.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  header nav.active ~ #overlay {
+    visibility: visible;
+    opacity: 1;
+    inset: 0;
+  }
+
+  header.scroll nav.active ~ #overlay {
+    inset: 8.5dvh 0 0 0;
   }
 
   header.scroll nav {
@@ -151,7 +213,7 @@ header nav a.current::after {
     display: block;
     position: relative;
     z-index: 1;
-    font-size: calc(var(--font-size-normal) * 1.25);
+    font-size: 120%;
     margin: var(--spacing-md) 0;
     padding: var(--spacing-sm);
     text-align: center;
@@ -531,7 +593,6 @@ header nav a.current::after {
 
 .timeline-circle.edu.ut {
   background: var(--color-bg);
-
 }
 
 .timeline-circle img {
