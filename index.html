@@ -22,41 +22,43 @@
     <script defer src="assets/script/scrollreveal.min.js"></script>
     <title>D B I CIPTA</title>
   </head>
-  <body>
+  <body class="light-mode">
     <header id="header">
-      <div class="logo" onclick="toggleDropdown()">
-        <i id="dropdownIcon" class="bx bx-chevron-down"></i>
-        <h4>D B I CIPTA</h4>
-        <div class="dropdown" id="themeDropdown">
-          <button onclick="setTheme('light')">
-            <ion-icon name="sunny"></ion-icon>
-            <p>Light Mode</p>
-          </button>
-          <button onclick="setTheme('dark')">
-            <ion-icon name="moon"></ion-icon>
-            <p>Dark Mode</p>
-          </button>
-          <button onclick="setTheme('system')">
-            <ion-icon name="laptop"></ion-icon>
-            <p>System Default</p>
-          </button>
+      <div class="container">
+        <div class="logo" onclick="toggleDropdown()">
+          <i id="dropdownIcon" class="bx bx-chevron-down"></i>
+          <h4>D B I CIPTA</h4>
+          <div class="dropdown" id="themeDropdown">
+            <button onclick="setTheme('light')">
+              <ion-icon name="sunny"></ion-icon>
+              <p>Light Mode</p>
+            </button>
+            <button onclick="setTheme('dark')">
+              <ion-icon name="moon"></ion-icon>
+              <p>Dark Mode</p>
+            </button>
+            <button onclick="setTheme('system')">
+              <ion-icon name="laptop"></ion-icon>
+              <p>System Default</p>
+            </button>
+          </div>
         </div>
-      </div>
-      <div class="menu-bar" onclick="openMenu()">
-        <div class="hamburger">
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
+        <div class="menu-bar" onclick="openMenu()">
+          <div class="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
         </div>
+        <nav id="navbar">
+          <a href="index.html#hero" class="current">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#education">Education</a>
+          <a href="index.html#experiences">Experiences</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <div id="overlay" onclick="closeMenu()"></div>
       </div>
-      <nav id="navbar">
-        <a href="index.html#hero" class="current">Home</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#education">Education</a>
-        <a href="index.html#experiences">Experiences</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
-      <div id="overlay" onclick="closeMenu()"></div>
     </header>
     <main>
       <!-- HERO SECTION -->
@@ -76,7 +78,7 @@
       <section id="about" data-title="ABOUT">
         <div class="container">
           <div class="about-text popup">
-            <h2 class="popup">About Me</h2>
+            <h2 class="popup section-title">About Me</h2>
             <p class="popup">
               As a Community Engagement Officer with a strong background in
               community development, I specialize in leveraging technology and
@@ -110,129 +112,143 @@
             </div>
           </div>
         </div>
-        <div class="container">
-          <h2 class="skill popup">Competences</h2>
-          <div class="skill-container">
-            <!-- HARDSKILL -->
-            <div class="card popup">
-              <span>
-                <ion-icon name="logo-google"></ion-icon>
-                Google Workspace
-              </span>
-              <p>
-                Able to use Google Workspace to streamline collaboration, manage
-                documents, and enhance productivity through cloud-based tools.
-              </p>
+        <div class="container skill">
+          <h2 class="skill popup section-title">Competences</h2>
+          <div class="swiper">
+            <div class="skill-container popup">
+              <div class="card-list swiper-wrapper">
+                <div class="card swiper-slide">
+                  <div class="card-icon google">
+                    <ion-icon name="logo-google" class="icon"></ion-icon>
+                  </div>
+                  <div class="card-text">
+                    <h4 class="card-title">Google Workspace</h4>
+                    <p>
+                      Able to use Google Workspace to streamline collaboration,
+                      manage documents, and enhance productivity through
+                      cloud-based tools.
+                    </p>
+                  </div>
+                </div>
+                <div class="card swiper-slide">
+                  <div class="card-icon microsoft">
+                    <ion-icon name="logo-microsoft" class="icon"></ion-icon>
+                  </div>
+                  <div class="card-text">
+                    <h4 class="card-title">Microsoft Office</h4>
+                    <p>
+                      Proficient in using Microsoft Office to create and edit
+                      documents, spreadsheets, and presentations effectively.
+                    </p>
+                  </div>
+                </div>
+                <div class="card swiper-slide">
+                  <div class="card-icon html5">
+                    <ion-icon name="logo-html5" class="icon"></ion-icon>
+                  </div>
+                  <div class="card-text">
+                    <h4 class="card-title">HTML5</h4>
+                    <p>
+                      Capable of utilizing HTML to build and structure web
+                      content for various projects.
+                    </p>
+                  </div>
+                </div>
+                <div class="card swiper-slide">
+                  <div class="card-icon css3">
+                    <ion-icon name="logo-css3" class="icon"></ion-icon>
+                  </div>
+                  <div class="card-text">
+                    <h4 class="card-title">CSS3</h4>
+                    <p>
+                      Skilled in applying CSS to style, organize, and enhance
+                      the visual appearance of websites.
+                    </p>
+                  </div>
+                </div>
+                <div class="card swiper-slide">
+                  <div class="card-icon javascript">
+                    <ion-icon name="logo-javascript" class="icon"></ion-icon>
+                  </div>
+                  <div class="card-text">
+                    <h4 class="card-title">JavaScript</h4>
+                    <p>
+                      Able to use JavaScript to create dynamic and interactive
+                      website features, improving user experience.
+                    </p>
+                  </div>
+                </div>
+                <div class="card swiper-slide">
+                  <div class="card-icon communication">
+                    <ion-icon
+                      name="chatbubble-ellipses-outline"
+                      class="icon"
+                    ></ion-icon>
+                  </div>
+                  <div class="card-text">
+                    <h4 class="card-title">Communication</h4>
+                    <p>
+                      Capable of delivering clear and effective communication
+                      tailored to various audiences and purposes.
+                    </p>
+                  </div>
+                </div>
+                <div class="card swiper-slide">
+                  <div class="card-icon time-management">
+                    <ion-icon name="time-outline" class="icon"></ion-icon>
+                  </div>
+                  <div class="card-text">
+                    <h4 class="card-title">Time Management</h4>
+                    <p>
+                      Able to effectively manage time and prioritize tasks to
+                      achieve project goals efficiently.
+                    </p>
+                  </div>
+                </div>
+                <div class="card swiper-slide">
+                  <div class="card-icon negotiation">
+                    <ion-icon
+                      class="icon"
+                      name="chatbubbles-outline"
+                    ></ion-icon>
+                  </div>
+                  <div class="card-text">
+                    <h4 class="card-title">Negotiation</h4>
+                    <p>
+                      Able to effectively manage time and prioritize tasks to
+                      achieve project goals efficiently.
+                    </p>
+                  </div>
+                </div>
+                <div class="card swiper-slide">
+                  <div class="card-icon comdev">
+                    <ion-icon class="icon" name="people-outline"></ion-icon>
+                  </div>
+                  <div class="card-text">
+                    <h4 class="card-title">Community Dev.</h4>
+                    <p>
+                      Experienced in building relationships and empowering
+                      communities to achieve shared goals.
+                    </p>
+                  </div>
+                </div>
+                <div class="card swiper-slide">
+                  <div class="card-icon project">
+                    <ion-icon class="icon" name="folder-outline"></ion-icon>
+                  </div>
+                  <div class="card-text">
+                    <h4 class="card-title">Project Management</h4>
+                    <p>
+                      Proficient in planning, organizing, and executing projects
+                      to ensure successful completion.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="card popup">
-              <span>
-                <ion-icon name="logo-microsoft"></ion-icon>
-                Microsoft Office
-              </span>
-              <p>
-                Proficient in using Microsoft Office to create and edit
-                documents, spreadsheets, and presentations effectively.
-              </p>
-            </div>
-            <div class="card popup">
-              <span>
-                <ion-icon name="logo-html5"></ion-icon>
-                HTML
-              </span>
-              <p>
-                Capable of utilizing HTML to build and structure web content for
-                various projects.
-              </p>
-            </div>
-            <div class="card popup">
-              <span>
-                <ion-icon name="logo-css3"></ion-icon>
-                CSS
-              </span>
-              <p>
-                Skilled in applying CSS to style, organize, and enhance the
-                visual appearance of websites.
-              </p>
-            </div>
-            <div class="card popup">
-              <span>
-                <ion-icon name="logo-javascript"></ion-icon>
-                Javascript
-              </span>
-              <p>
-                Able to use JavaScript to create dynamic and interactive website
-                features, improving user experience.
-              </p>
-            </div>
-            <div class="card popup">
-              <span>
-                <i class="bx bxl-tailwind-css"></i>
-                Tailwind CSS
-              </span>
-              <p>
-                Proficient in implementing Tailwind CSS to rapidly design
-                responsive and modern web interfaces.
-              </p>
-            </div>
-
-            <!-- SOFTSKILL -->
-            <div class="card popup">
-              <span>
-                <ion-icon name="chatbox-ellipses"></ion-icon>
-                Communication
-              </span>
-              <p>
-                Capable of delivering clear and effective communication tailored
-                to various audiences and purposes.
-              </p>
-            </div>
-            <div class="card popup">
-              <span>
-                <ion-icon name="time"></ion-icon>
-                Time Management
-              </span>
-              <p>
-                Able to effectively manage time and prioritize tasks to achieve
-                project goals efficiently.
-              </p>
-            </div>
-            <div class="card popup">
-              <span>
-                <ion-icon name="people"></ion-icon>
-                Negotiation
-              </span>
-              <p>
-                Skilled in negotiating to reach mutually beneficial agreements
-                through persuasive communication.
-              </p>
-            </div>
-            <div class="card popup">
-              <span>
-                <ion-icon name="people-circle"></ion-icon> Community Dev.
-              </span>
-              <p>
-                Experienced in building relationships and empowering communities
-                to achieve shared goals.
-              </p>
-            </div>
-            <div class="card popup">
-              <span
-                ><ion-icon name="alert-circle"></ion-icon> Problem Solving
-              </span>
-              <p>
-                Able to analyze complex issues and provide effective, creative
-                solutions.
-              </p>
-            </div>
-            <div class="card popup">
-              <span
-                ><ion-icon name="folder"></ion-icon> Project Management
-              </span>
-              <p>
-                Proficient in planning, organizing, and executing projects to
-                ensure successful completion.
-              </p>
-            </div>
+            <div class="swiper-button-prev popup"></div>
+            <div class="swiper-button-next popup"></div>
+            <div class="swiper-pagination popup"></div>
           </div>
         </div>
       </section>
@@ -240,7 +256,7 @@
       <!-- EDU SECTION -->
       <section data-title="EDUCATION" id="education">
         <div class="container">
-          <h2 class="popup">Education</h2>
+          <h2 class="popup section-title">Education</h2>
           <div class="edu-container">
             <div class="timeline-component">
               <div class="timeline-progress popup">
@@ -250,8 +266,8 @@
                 <div class="timeline-left">
                   <h3 class="timeline-date popup">September 2023 - Present</h3>
                 </div>
-                <div class="timeline-center">
-                  <div class="timeline-circle edu ut popup">
+                <div class="timeline-center popup">
+                  <div class="timeline-circle edu ut">
                     <img src="assets/img/ut.png" alt="UT" />
                   </div>
                 </div>
@@ -309,7 +325,7 @@
       <!-- SECTION EXPERIENCE -->
       <section data-title="EXPERIENCES" id="experiences">
         <div class="container">
-          <h2 class="popup">Experiences</h2>
+          <h2 class="popup section-title">Experiences</h2>
           <div class="expe-container">
             <div class="timeline-component">
               <div class="timeline-progress popup">
@@ -439,7 +455,7 @@
       <!-- CONTACT SECTION -->
       <section id="contact" data-title="CONTACT">
         <div class="container">
-          <h2 class="popup">Contact</h2>
+          <h2 class="popup section-title">Contact</h2>
           <div class="contact-text popup">
             <p>
               Thank you for visiting this portfolio. Hopefully, this journey
@@ -485,7 +501,7 @@
               ></textarea>
               <label for="message" class="label">Message</label>
             </div>
-            <button class="btn">
+            <button type="submit" class="btn">
               Send Message
               <i class="bx bxs-send"></i>
             </button>
@@ -543,6 +559,8 @@
         </div>
       </div>
     </footer>
+
+    <!-- SCRIPT -->
     <script
       type="module"
       src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"
@@ -551,5 +569,7 @@
       nomodule=""
       src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   </body>
 </html>

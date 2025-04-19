@@ -208,3 +208,47 @@ function showPopup() {
 function closePopup() {
   document.getElementById("popup-message").classList.remove("show");
 }
+
+// SWIPER
+new Swiper(".skill-container", {
+  loop: true,
+  speed: 1500,
+  grabCursor: false,
+
+  // PAGINATION
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+
+  // NAVIGATION
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  // AUTOHEIGHT
+  autoHeight: true,
+
+  // BREAKPOINTS
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+  },
+  // AUTOPLAY
+  autoplay: {
+    delay: 5500,
+    disableOnInteraction: false,
+  },
+});

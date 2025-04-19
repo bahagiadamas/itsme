@@ -1,0 +1,6 @@
+:root {
+  /* NAVIGATION */
+  --swiper-navigation-size: clamp(2.4414rem, 2.2264rem + 1.0752vw, 3.9467rem);
+  --swiper-navigation-top-offset: 50%;
+  --swiper-navigation-sides-offset: 0;
+}

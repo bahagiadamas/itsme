@@ -1,34 +1,38 @@
 /* CONTAINER */
 .container {
-  width: 100%;
-  max-width: min(90%, 1440px);
+  width: clamp(320px, 90vw, 1920px);
   margin: 0 auto;
-  padding: var(--spacing-md);
+  padding-inline: var(--spacing-s-2xl);
 }
 
 /* BUTTON */
 .btn {
-    display: inline-block;
-    text-transform: uppercase;
-    background: var(--color-text-inverse);
+  display: inline-block;
+  text-transform: uppercase;
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  padding: var(--spacing-xs);
+  border-radius: 20px;
+  font-size: var(--font-size-0);
+  font-weight: 500;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background: var(--color-primary);
     color: var(--color-text);
-    padding: var(--spacing-sm) var(--spacing-md);
-    border-radius: var(--border-radius-md);
-    font-weight: var(--font-weight-md);
-    transition-duration: var(--transition-normal);
-    cursor: pointer;
-
-    &:hover {
-        background: var(--color-text);
-        color: var(--color-text-inverse);
-    }
+  }
 }
 
 /* CARD */
 .card {
   background: inherit;
   box-shadow: 0 0 5px var(--color-shadow);
-  padding: var(--spacing-normal);
-  border-radius: var(--border-radius-md);
+  padding: var(--spacing-s);
+  border-radius: 20px;
 }
 
+/* TITLE */
+h2.section-title {
+  text-transform: uppercase;
+  letter-spacing: var(--spacing-xs);
+}
