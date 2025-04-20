@@ -5,7 +5,7 @@
   --color-primary: #09a9c8;
   --color-primary-dark: #0b7489;
   --color-accent: #05445e;
-  --color-shadow: rgba(0, 0, 0, 0.5);
+  --color-shadow: rgb(0 0 0 / 50%);
 }
 
 /* THEME */
@@ -15,7 +15,7 @@ body.light-mode {
   --color-text: #2b4560;
   --color-primary: #09a9c8;
   --color-accent: #05445e;
-  --color-shadow: rgba(0, 0, 0, 0.5);
+  --color-shadow: rgb(0 0 0 / 50%);
   --swiper-navigation-color: var(--color-accent);
   --swiper-pagination-color: var(--color-accent);
 }
@@ -26,7 +26,7 @@ body.dark-mode {
   --color-text: #e1e7e0;
   --color-primary: #15273a;
   --color-accent: #d4f1f4;
-  --color-shadow: rgba(255, 255, 255, 0.5);
+  --color-shadow: rgb(255 255 255 / 50%);
   --swiper-navigation-color: var(--color-accent);
   --swiper-pagination-color: var(--color-accent);
 }
@@ -40,7 +40,7 @@ body.dark-mode {
     --color-primary-dark: #0b7489;
     --color-accent: #05445e;
     --color-accent1: #05445e;
-    --color-shadow: rgba(0, 0, 0, 0.5);
+    --color-shadow: rgb(0 0 0 / 50%);
     --swiper-navigation-color: var(--color-accent);
     --swiper-pagination-color: var(--color-accent);
   }
@@ -55,7 +55,7 @@ body.dark-mode {
     --color-primary-dark: #0d1823;
     --color-accent: #d4f1f4;
     --color-accent1: #05445e;
-    --color-shadow: rgba(255, 255, 255, 0.5);
+    --color-shadow: rgb(255 255 255 / 50%);
     --swiper-navigation-color: var(--color-accent);
     --swiper-pagination-color: var(--color-accent);
   }

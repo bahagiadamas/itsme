@@ -1,32 +1,44 @@
 :root {
   /* SPACING */
+
   /* Space xs: 8px → 10px */
   --spacing-xs: clamp(0.5rem, 0.4615rem + 0.1923vw, 0.625rem);
+
   /* Space s: 16px → 20px */
   --spacing-s: clamp(1rem, 0.9231rem + 0.3846vw, 1.25rem);
+
   /* Space m: 24px → 30px */
   --spacing-m: clamp(1.5rem, 1.3846rem + 0.5769vw, 1.875rem);
+
   /* Space l: 32px → 40px */
   --spacing-l: clamp(2rem, 1.8462rem + 0.7692vw, 2.5rem);
+
   /* Space xl: 40px → 50px */
   --spacing-xl: clamp(2.5rem, 2.3077rem + 0.9615vw, 3.125rem);
   --spacing-2xl: clamp(3.1875rem, 2.825rem + 1.8125vw, 5rem);
 
   /* One-up pairs */
+
   /* Space s-m: 16px → 30px */
   --spacing-s-m: clamp(1rem, 0.7308rem + 1.3462vw, 1.875rem);
+
   /* Space m-l: 24px → 40px */
   --spacing-m-l: clamp(1.5rem, 1.1923rem + 1.5385vw, 2.5rem);
+
   /* Space l-xl: 32px → 50px */
   --spacing-l-xl: clamp(2rem, 1.6538rem + 1.7308vw, 3.125rem);
 
   /* Custom pairs */
+
   /* Space s-l: 16px → 40px */
   --spacing-s-l: clamp(1rem, 0.5385rem + 2.3077vw, 2.5rem);
+
   /* Space s-xl: 16px → 50px */
   --spacing-s-xl: clamp(1rem, 0.3462rem + 3.2692vw, 3.125rem);
+
   /* Space m-xl: 24px → 50px */
   --spacing-m-xl: clamp(1.5rem, 1rem + 2.5vw, 3.125rem);
+
   /* Space s-2xl: 16px → 64px */
   --spacing-s-2xl: clamp(1rem, 0.5714rem + 2.1429vw, 4rem);
 }
