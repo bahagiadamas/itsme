@@ -34,6 +34,7 @@
 
 /* TITLE */
 h2.section-title {
+  margin: var(--spacing-m) 0;
   letter-spacing: var(--spacing-xs);
   text-transform: uppercase;
 }

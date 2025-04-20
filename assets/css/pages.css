@@ -308,12 +308,17 @@ header .container #overlay {
 }
 
 .banner-text h1 {
-  letter-spacing: var(--spacing-xs);
-  margin-bottom: var(--spacing-xs);
+  margin: var(--spacing-m) 0;
+  line-height: 1.25;
+  letter-spacing: var(--spacing-s);
 }
 
 .banner-text h1 span {
   color: var(--color-primary);
+}
+
+.banner-text h2 {
+  margin: var(--spacing-s) 0;
 }
 
 .banner-text a {
@@ -765,6 +770,27 @@ div.card-icon {
 form button {
   text-align: center;
   box-shadow: 3px 3px 5px var(--color-shadow);
+}
+
+.btn-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn-container ion-icon {
+  position: absolute;
+  left: 0;
+  transition: left 750ms ease;
+}
+
+form button:hover .btn-container ion-icon {
+  left: 100%;
 }
 
 #contact .container .popup-message {
