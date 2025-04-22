@@ -100,7 +100,7 @@ document.addEventListener("click", function (e) {
   }
 });
 
-// DARK MODE SELECTION
+// THEME SELECTION
 function setTheme(theme) {
   localStorage.setItem("theme", theme);
   applyTheme();
@@ -116,9 +116,23 @@ function applyTheme() {
     document.body.classList.add("light-mode");
     document.body.classList.remove("dark-mode");
   } else {
-    document.body.classList.remove("light-mode", "dark-mode");
+    // Mengikuti preferensi sistem
+    const prefersDark = window.matchMedia(
+      
+    
+      "(prefers-color-scheme: dark)"
+    ).matches;
+
+    if (prefersDark) {
+      document.body.classList.add("dark-mode");
+      document.body.classList.remove("light-mode");
+    } else {
+      document.body.classList.add("light-mode");
+      document.body.classList.remove("dark-mode");
+    }
   }
 }
+
 document.addEventListener("DOMContentLoaded", applyTheme);
 
 // DYNAMIC TITLE

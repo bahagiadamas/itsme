@@ -16,9 +16,17 @@ header {
   align-items: center;
   width: 100%;
   height: 8.5dvh;
-  color: #e1e7e0;
+  color: var(--color-text-inverse);
   background: transparent;
   transition: all 500ms linear;
+}
+
+body.light-mode header.scroll {
+  color: var(--color-text);
+}
+
+body.dark-mode header {
+  color: var(--color-text);
 }
 
 header .container {
@@ -123,10 +131,18 @@ header .container .menu-bar {
 .hamburger .line {
   width: 100%;
   height: 4px;
-  background: #e1e7e0;
+  background: var(--color-text-inverse);
   border-radius: 50px;
   transition: all 0.5s ease;
   transform-origin: center;
+}
+
+body.light-mode header.scroll .hamburger .line {
+  background: var(--color-text);
+}
+
+body.dark-mode header .hamburger .line {
+  background-color: var(--color-text);
 }
 
 .hamburger.active .line {
@@ -170,10 +186,18 @@ header .container nav a::after {
   left: 0;
   width: 0%;
   height: 10%;
-  background: #e1e7e0;
+  background: var(--color-text-inverse);
   border-radius: 20px;
   transition: all 300ms ease-in-out;
   content: "";
+}
+
+body.light-mode header.scroll .container nav a::after {
+  background: var(--color-text);
+}
+
+body.dark-mode header .container nav a::after {
+  background: var(--color-text);
 }
 
 header .container nav a.current::after {
@@ -266,8 +290,16 @@ header .container #overlay {
     width: 100%;
   }
 
+  body.light-mode header .container nav a.current {
+    color: var(--color-text-inverse);
+  }
+
+  body.light-mode header .container nav a.current::after {
+    background: var(--color-accent);
+  }
+
   body.dark-mode header .container nav a.current {
-    color: var(--color-primary);
+    color: var(--color-text);
   }
 
   body.dark-mode header .container nav a.current::after {
@@ -314,7 +346,7 @@ header .container #overlay {
 }
 
 .banner-text h1 span {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 .banner-text h2 {
@@ -371,14 +403,15 @@ header .container #overlay {
   align-items: center;
   width: var(--spacing-2xl);
   font-size: var(--font-size-3);
-  color: var(--color-text-inverse);
-  background: var(--color-accent);
+  color: var(--color-text);
+  background: var(--color-surface);
   border-radius: 50%;
+  box-shadow: 0 0 3px var(--color-shadow);
   transition: color 500ms ease-in-out;
   aspect-ratio: 1;
 
   &:hover {
-    color: var(--color-primary);
+    color: var(--color-accent);
     --fill: 100%;
   }
 }
@@ -388,7 +421,7 @@ header .container #overlay {
   position: absolute;
   z-index: -1;
   background: conic-gradient(
-    var(--color-primary) var(--fill),
+    var(--color-accent) var(--fill),
     transparent var(--fill)
   );
   border-radius: inherit;
@@ -479,14 +512,14 @@ header .container #overlay {
 
 .card-list .card::before {
   z-index: -1;
-  background: var(--color-bg);
+  background: var(--color-surface);
   inset: 0;
 }
 
 .card-list .card::after {
   z-index: -2;
   background: conic-gradient(
-    var(--color-primary) var(--fill),
+    var(--color-accent) var(--fill),
     transparent var(--fill)
   );
   transition: --fill 500ms ease-in-out;
@@ -500,15 +533,16 @@ header .container #overlay {
 
 div.card-icon {
   max-width: 100%;
-  background: var(--color-accent);
+  background: var(--color-bg);
   border-radius: inherit;
+  box-shadow: 0 0 1px var(--color-shadow);
   aspect-ratio: 16/9;
 }
 
 .card-icon .icon {
   width: 100%;
   height: 100%;
-  color: var(--color-text-inverse);
+  color: var(--color-text);
   object-fit: cover;
 }
 
@@ -850,7 +884,7 @@ form button:hover .btn-container ion-icon {
 
 #footer {
   position: relative;
-  color: #e1e7e0;
+  color: var(--color-text);
   background: var(--color-primary);
 }
 
